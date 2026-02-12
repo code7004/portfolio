@@ -1,0 +1,29 @@
+{
+  "endOfLine": "auto",
+  "semi": true,
+  "singleQuote": false,
+  "printWidth": 300,
+  "tabWidth": 2,
+  "useTabs": false,
+  "arrowParens": "avoid",
+  "bracketSpacing": true,
+  "htmlWhitespaceSensitivity": "css",
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "trailingComma": "none",
+  "vueIndentScriptAndStyle": false,
+  "filepath": "",
+  "requirePragma": false,
+  "insertPragma": false,
+  "overrides": [
+    { "files": "NestedRoutes.js", "options": { "printWidth": 500, "trailingComma": "none" } },
+    {
+      "files": ["*.json"],
+      "options": { "printWidth": 100, "trailingComma": "none" }
+    },
+    { "files": "*.prettierrc", "options": { "printWidth": 100, "trailingComma": "none" } },
+    { "files": "*.code-snippets", "options": { "printWidth": 100, "trailingComma": "none" } }
+  ]
+}
