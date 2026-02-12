@@ -1,6 +1,6 @@
-import path from "path";
-import HtmlWebpackPlugin from "html-webpack-plugin";
 import ESLintPlugin from "eslint-webpack-plugin";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import path from "path";
 import webpack from "webpack";
 
 const Webpack = (env, argv, custom) => {
@@ -13,7 +13,7 @@ const Webpack = (env, argv, custom) => {
       proxy: [
         {
           context: ["/api"],
-          target: "https://frontend-assignment-api.mathflat.com",
+          target: "https://dummyapi.io/data/v1",
           changeOrigin: true,
           secure: false
         }

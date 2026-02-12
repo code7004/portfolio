@@ -1,15 +1,20 @@
-const App = () => {
+import { BrowserRouter as Router } from "react-router-dom";
+
+import { RouteData } from "@/config/RouteData";
+import { Suspense } from "react";
+import RouteToolkit from "./@core/routeToolkit";
+import PageLoader from "./components/PageLoader";
+
+function App() {
   return (
-    <div>
-      <div>This is Portfolio</div>
-      <div>포트폴리오 </div>
-      <div className="text-7xl">포트폴리오 </div>
-      <div className="text-red-400">포트폴리오 </div>
-      <div className="text-blue-400">포트폴리오 </div>
-      <div className="text-sky-400">포트폴리오 </div>
-      <div className="text-purple-400">포트폴리오 </div>
-    </div>
+    <Router>
+      {/* lazy로 불러오는 페이지에 대한 fallback 로딩 UI */}
+      <Suspense fallback={<PageLoader className={"h-screen"} />}>
+        {/* 라우트 렌더링 */}
+        <RouteToolkit data={RouteData} />
+      </Suspense>
+    </Router>
   );
-};
+}
 
 export default App;
