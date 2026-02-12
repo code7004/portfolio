@@ -1,0 +1,11 @@
+@keyframes tx-spinner-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.tx-spinner {
+  display: inline-block;
+  animation: tx-spinner-rotate 0.8s linear infinite;
+  transform-origin: 50% 50%;
+}

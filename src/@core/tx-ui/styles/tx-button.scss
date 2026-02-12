@@ -1,0 +1,86 @@
+.tx-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.15s ease, background-color 0.15s ease;
+
+  &:active {
+    opacity: 0.7;
+  }
+
+  &.is-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &.is-loading {
+    cursor: wait;
+  }
+}
+
+/* 공통 베이스 */
+.tx-button--base {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+/* Variants */
+.tx-button--primary {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.tx-button--secondary {
+  background-color: #e5e7eb;
+  color: #111827;
+}
+
+.tx-button--danger {
+  background-color: #ef4444;
+  color: #fff;
+}
+
+.tx-button--ghost {
+  background-color: transparent;
+  color: #374151;
+}
+
+.tx-button--text {
+  background-color: transparent;
+  padding: 4px 8px;
+}
+
+/* Color override */
+.tx-button--color-primary {
+  background-color: #2563eb;
+}
+
+.tx-button--color-secondary {
+  background-color: #6b7280;
+}
+
+.tx-button--color-danger {
+  background-color: #dc2626;
+}
+
+/* 내부 요소 */
+.tx-button__loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tx-button.is-loading .tx-button__label {
+  opacity: 0.3;
+}
