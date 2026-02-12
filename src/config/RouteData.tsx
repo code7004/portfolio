@@ -8,7 +8,7 @@ import Dashboard from "@/pages/Contents/Dashboard";
 import Settings from "@/pages/Contents/Settings";
 
 // 동적 import를 통한 코드 스플리팅 (React.lazy + Suspense 필요)
-const Logs = React.lazy(() => import("@/pages/Contents/Logs"));
+const Board = React.lazy(() => import("@/pages/Contents/Board"));
 // Logs 하위 메뉴
 
 /**
@@ -27,14 +27,14 @@ export const RouteData = {
     children: {
       Dashboard: { name: "DASHBOARD", icon: "🧮", index: true, disable: false, path: "/", element: <Dashboard />, description: "포트폴리오 요약" },
       Settings: { name: "SETTINGS", icon: "⚙️", index: true, disable: false, path: "/settings", element: <Settings />, description: "세팅페이지" },
-      Logs: {
-        name: "LOGS",
+      Board: {
+        name: "BOARD",
         icon: "🧾",
         disable: true,
-        path: "/logs",
-        element: <Logs />,
+        path: "/board",
+        element: <Board />,
         children: {
-          Dashboard: { name: "Dashboard", icon: "🧾", disable: false, path: "/logs", element: <Dashboard />, description: "솔루셔 요악 및 바로가기" }
+          Dashboard: { name: "Board", icon: "🧾", disable: false, path: "/board", element: <Dashboard />, description: "게시판" }
         }
       }
     }

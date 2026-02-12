@@ -6,9 +6,9 @@ const Dashboard = () => {
   const route = useCurrentRoute(RouteData);
 
   return (
-    <PageLayout>
-      <h1 className="text-2xl font-bold">{`${route.data.icon} ${route.data.name}`}</h1>
-      <p className="mt-2 text-gray-600">이 페이지는 📊 대시보드용 템플릿입니다.</p>
+    <PageLayout className="flex flex-col p-4">
+      <h1 className="font-bold">{`${route.data.icon} ${route.data.name}`}</h1>
+      <p className="text-gray-600">이 페이지는 📊 대시보드용 템플릿입니다.</p>
       <ul>
         <li>현재 가동 중 설비스</li>
         <li>이상 감지 설비</li>
