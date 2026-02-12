@@ -1,7 +1,10 @@
+import "@/styles/tailwind.css"; // 먼저
+
+import "@/styles/index.scss";
+
 import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
-import "@/styles/index.scss";
 
 const root = createRoot(document.getElementById("root")!);
 root.render(

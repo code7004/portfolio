@@ -32,13 +32,18 @@ const Webpack = (env, argv, custom) => {
     },
     module: {
       rules: [
+        { test: /\.md$/, loader: "ignore-loader" },
         {
           test: /\.(ts|tsx|js|jsx)$/,
           use: "ts-loader",
           exclude: /node_modules/
         },
         {
-          test: /\.(css|scss)$/i,
+          test: /\.css$/i,
+          use: ["style-loader", "css-loader", "postcss-loader"]
+        },
+        {
+          test: /\.scss$/i,
           use: ["style-loader", "css-loader", "sass-loader"]
         }
       ]
