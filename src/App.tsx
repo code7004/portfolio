@@ -6,6 +6,7 @@ import RouteToolkit from "./@core/routeToolkit";
 import PageLoader from "./components/PageLoader";
 
 function App() {
+  const a;
   return (
     <Router>
       {/* lazy로 불러오는 페이지에 대한 fallback 로딩 UI */}
