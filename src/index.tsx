@@ -2,14 +2,34 @@ import "@/styles/tailwind.css"; // 먼저
 
 import "@/styles/index.scss";
 
-import React, { StrictMode } from "react";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { initAxios } from "./@core/network/axios.config";
 import App from "./App";
 
 const root = createRoot(document.getElementById("root")!);
-root.render(
-  // StricMode 개발 초기에 구성 요소의 일반적인 버그를 찾을 수 있습니다.
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
+
+(async () => {
+  console.log("Version:", __APP_VERSION__);
+
+  if (__BUILD_MODE__ == "production") {
+    console.log = () => {};
+    initAxios("https://dummyapi.io/data/v1", true);
+    // console.log = console.warn = console.error = () => {};
+  } else {
+    initAxios("https://dummyapi.io/data/v1", true);
+  }
+
+  console.log("Mode:", __BUILD_MODE__);
+  console.log("NoStrict Mode:", __NO_STRICT_MODE__);
+
+  if (__NO_STRICT_MODE__) {
+    root.render(<App />);
+  } else {
+    root.render(
+      <StrictMode>
+        <App />
+      </StrictMode>
+    );
+  }
+})();

@@ -4,7 +4,7 @@ import path from "path";
 import webpack from "webpack";
 
 const Webpack = (env, argv, custom) => {
-  const { appName, version, minify } = custom;
+  const { appName, version = "v000000", minify, mode } = custom;
   console.log(appName, "build version : ", version, JSON.stringify(argv), JSON.stringify(env), JSON.stringify(custom));
   return {
     devServer: {
@@ -62,6 +62,11 @@ const Webpack = (env, argv, custom) => {
         overrideConfigFile: path.resolve(process.cwd(), "eslint.config.js"),
         cache: true,
         failOnError: false
+      }),
+      new webpack.DefinePlugin({
+        __APP_VERSION__: JSON.stringify(version),
+        __NO_STRICT_MODE__: JSON.stringify(!!env.nostrict),
+        __BUILD_MODE__: JSON.stringify(mode)
       })
     ]
   };
