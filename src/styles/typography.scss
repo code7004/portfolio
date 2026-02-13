@@ -1,7 +1,9 @@
 /* typography.scss */
 
+@use "./fonts.scss";
+
 .caption-1 {
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
@@ -9,7 +11,7 @@
 }
 
 @mixin body-font {
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-size: 14px;
   font-weight: 400;
   line-height: 21px;
@@ -25,7 +27,7 @@
 }
 
 .heading-5 {
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-size: 18px;
   font-weight: 700;
   line-height: 24px;

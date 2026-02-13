@@ -1,10 +1,11 @@
+// src/index.tsx
 import "@/styles/tailwind.css"; // 먼저
 
 import "@/styles/index.scss";
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { initAxios } from "./@core/network/axios.config";
+import { setupAxiosLogger } from "./@core/network/axiosLogger";
 import App from "./App";
 
 const root = createRoot(document.getElementById("root")!);
@@ -14,10 +15,9 @@ const root = createRoot(document.getElementById("root")!);
 
   if (__BUILD_MODE__ == "production") {
     console.log = () => {};
-    initAxios("https://dummyapi.io/data/v1", true);
-    // console.log = console.warn = console.error = () => {};
+    setupAxiosLogger(false);
   } else {
-    initAxios("https://dummyapi.io/data/v1", true);
+    setupAxiosLogger(true);
   }
 
   console.log("Mode:", __BUILD_MODE__);

@@ -1,3 +1,4 @@
+// webpack.dev.js
 import { merge } from "webpack-merge";
 import common from "./webpack.common.js";
 
@@ -20,9 +21,20 @@ const Webpack = (env, argv) => {
     },
     devServer: {
       host: "localhost",
-      port: argv.port || 80,
+      port: argv.port || 3000,
       historyApiFallback: true,
       open: true,
+      proxy: [
+        {
+          context: ["/api"],
+          target: "https://dummyjson.com",
+          changeOrigin: true,
+          secure: false,
+          pathRewrite: {
+            "^/api": ""
+          }
+        }
+      ],
       client: {
         overlay: {
           errors: true,

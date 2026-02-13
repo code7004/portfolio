@@ -1,3 +1,5 @@
+// webpack.common.js
+
 import ESLintPlugin from "eslint-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import path from "path";
@@ -7,18 +9,6 @@ const Webpack = (env, argv, custom) => {
   const { appName, version = "v000000", minify, mode } = custom;
   console.log(appName, "build version : ", version, JSON.stringify(argv), JSON.stringify(env), JSON.stringify(custom));
   return {
-    devServer: {
-      port: 3000,
-      historyApiFallback: true,
-      proxy: [
-        {
-          context: ["/api"],
-          target: "https://dummyapi.io/data/v1",
-          changeOrigin: true,
-          secure: false
-        }
-      ]
-    },
     entry: { main: "./src/index.tsx" },
     resolve: {
       extensions: [".ts", ".tsx", ".js", ".jsx", ".json", ".css", ".scss"],
@@ -33,6 +23,13 @@ const Webpack = (env, argv, custom) => {
     module: {
       rules: [
         { test: /\.md$/, loader: "ignore-loader" },
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/i,
+          type: "asset/resource",
+          generator: {
+            filename: "assets/fonts/[name][ext]"
+          }
+        },
         {
           test: /\.(ts|tsx|js|jsx)$/,
           use: "ts-loader",
