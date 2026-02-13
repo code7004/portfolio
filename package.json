@@ -3,6 +3,22 @@
   "version": "1.0.0",
   "main": "index.tsx",
   "license": "MIT",
+  
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "clean": "rm -rf node_modules && yarn cache clean && yarn",
+    "start": "yarn webpack-dev-server --port=3000 --progress --config config/webpack.dev.js --name=app --env mode=development",
+    "build": "yarn webpack --progress --config config/webpack.prod.js --name=app --env version=v0.0.1 dist=build",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
   "dependencies": {
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.13.4",
@@ -30,7 +46,9 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-webpack-plugin": "^5.0.2",
     "html-webpack-plugin": "^5.6.6",
+    "husky": "^9.1.7",
     "ignore-loader": "^0.1.2",
+    "lint-staged": "^16.2.7",
     "postcss": "^8.5.6",
     "postcss-loader": "^8.2.0",
     "prettier": "^3.8.1",
@@ -45,13 +63,5 @@
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.3",
     "webpack-merge": "^6.0.1"
-  },
-  "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier --write .",
-    "clean": "rm -rf node_modules && yarn cache clean && yarn",
-    "start": "yarn webpack-dev-server --port=3000 --progress --config config/webpack.dev.js --name=app --env mode=development",
-    "build": "yarn webpack --progress --config config/webpack.prod.js --name=app --env version=v0.0.1 dist=build"
   }
 }
