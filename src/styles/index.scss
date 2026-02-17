@@ -1,5 +1,6 @@
 @use "./normalize.scss";
 @use "./typography.scss" as font;
+@use "../@core/tx-ui/styles/index.scss";
 
 #root {
   @include font.body-font;

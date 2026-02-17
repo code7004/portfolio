@@ -15,7 +15,7 @@ export interface ITxScrollViewProps {
   style?: CSSProperties;
 }
 
-const TxScrollView = ({ className = "flex flex-col flex-1 h-full gap-6", disableVScroll = false, children, style, header, footer, loader, onLayout, onReachedTop, onReachedBottom, reachedGap = 10 }: ITxScrollViewProps) => {
+export const TxScrollView = ({ className = "flex flex-col flex-1 h-full gap-6", disableVScroll = false, children, style, header, footer, loader, onLayout, onReachedTop, onReachedBottom, reachedGap = 10 }: ITxScrollViewProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [size, _size] = useState({ width: 0, height: 0 });
   const onLayoutRef = useRef(onLayout);
@@ -64,5 +64,3 @@ const TxScrollView = ({ className = "flex flex-col flex-1 h-full gap-6", disable
     </div>
   );
 };
-
-export default TxScrollView;
