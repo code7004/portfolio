@@ -1,9 +1,9 @@
 import { BrowserRouter as Router } from "react-router-dom";
 
-import { RouteData } from "@/config/RouteData";
+import { RouteData } from "@/app/RouteData";
+import RouteToolkit from "@/core/routeToolkit";
+import PageLoader from "@/shared/layout/PageLoader";
 import { Suspense } from "react";
-import RouteToolkit from "../@core/routeToolkit";
-import PageLoader from "../components/PageLoader";
 
 function App() {
   return (

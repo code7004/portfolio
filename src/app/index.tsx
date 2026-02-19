@@ -5,7 +5,7 @@ import "@/styles/index.scss";
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { setupAxiosLogger } from "../@core/network/axiosLogger";
+import { setupAxiosLogger } from "../core/network/axiosLogger";
 import App from "./App";
 
 const root = createRoot(document.getElementById("root")!);

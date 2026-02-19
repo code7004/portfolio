@@ -33,11 +33,12 @@ export type RouteDataAtts = Record<string, ExRouteObject>;
  * - children도 재귀적으로 변환
  */
 export function cleanRoutes(routes: RouteDataAtts): RouteObject[] {
-  return Object.values(routes).map(({ path, element, children }) => ({
-    path,
-    element,
-    children: children ? cleanRoutes(children) : undefined
-  }));
+  return Object.values(routes).map(route => {
+    const { path, element, children, index, loader, errorElement } = route;
+
+    if (index == true) return { index: true, path, element, loader, errorElement };
+    else return { path, element, loader, errorElement, children: children ? cleanRoutes(children) : undefined };
+  });
 }
 
 /**

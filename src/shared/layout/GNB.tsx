@@ -1,4 +1,4 @@
-import { RouteDataAtts } from "@/@core/routeToolkit";
+import { availableRouteDatas, RouteDataAtts } from "@/core/routeToolkit";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
@@ -7,7 +7,7 @@ export default function GNB({ data }: { data: RouteDataAtts }) {
   const [isDark, setIsDark] = useState(() => document.documentElement.classList.contains("dark"));
 
   useEffect(() => {
-    _menus(Object.values(data));
+    _menus(availableRouteDatas(data));
   }, [data]);
 
   const toggleDark = () => {

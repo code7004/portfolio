@@ -1,5 +1,5 @@
-import GNB from "@/components/GNB";
-import { RouteData } from "@/config/RouteData";
+import { RouteData } from "@/app/RouteData";
+import GNB from "@/shared/layout/GNB";
 import { Outlet } from "react-router-dom";
 
 const Contents = () => {

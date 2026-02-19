@@ -2,7 +2,9 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ]
     },
     "target": "ESNext",
     "module": "ESNext",
@@ -19,10 +21,24 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "plugins": [{ "transform": "ts-transformer-keys/transformer" }],
-    "lib": ["dom", "esnext"],
+    "plugins": [
+      {
+        "transform": "ts-transformer-keys/transformer"
+      }
+    ],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "jsx": "react-jsx"
   },
-  "include": ["src", "src/@types"],
-  "exclude": ["node_modules", "build", "public"]
+  "include": [
+    "src",
+    "src/types"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "public"
+  ]
 }

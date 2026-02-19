@@ -1,6 +1,6 @@
 import React, { ReactNode, SVGProps, useEffect, useRef, useState } from "react";
 import { ITxDropdownItem } from ".";
-import { cm } from "../";
+import { cm } from "..";
 
 // Item Props
 interface ITxDropdownItemProps extends ITxDropdownItem, React.HTMLAttributes<HTMLDivElement> {

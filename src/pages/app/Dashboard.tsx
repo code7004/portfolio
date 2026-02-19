@@ -1,6 +1,6 @@
-import { useCurrentRoute } from "@/@core/routeToolkit";
-import { PageLayout } from "@/components/PageLayout";
-import { RouteData } from "@/config/RouteData";
+import { RouteData } from "@/app/RouteData";
+import { useCurrentRoute } from "@/core/routeToolkit";
+import { PageLayout } from "@/shared/layout/PageLayout";
 
 const Dashboard = () => {
   const route = useCurrentRoute(RouteData);

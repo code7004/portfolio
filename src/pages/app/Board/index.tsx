@@ -1,7 +1,7 @@
-import { useCurrentRoute } from "@/@core/routeToolkit";
-import { TxCoolTable, TxCoolTableScroller, TxLoading, TxPagenation } from "@/@core/tx-ui";
-import { PageLayout } from "@/components/PageLayout";
-import { RouteData } from "@/config/RouteData";
+import { RouteData } from "@/app/RouteData";
+import { useCurrentRoute } from "@/core/routeToolkit";
+import { PageLayout } from "@/shared/layout/PageLayout";
+import { TxCoolTable, TxCoolTableScroller, TxLoading, TxPagenation } from "@/shared/tx-ui";
 import axios from "axios";
 import { useEffect, useState } from "react";
 

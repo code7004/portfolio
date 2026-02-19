@@ -1,14 +1,14 @@
 import React from "react";
 
-import Contents from "@/pages/Contents";
-import NotFound from "@/pages/NotFound";
+import Contents from "@/pages/app";
+import NotFound from "@/pages/public/NotFound";
 
 // Contetns
-import Dashboard from "@/pages/Contents/Dashboard";
-import Settings from "@/pages/Contents/Settings";
+import Dashboard from "@/pages/app/Dashboard";
+import Settings from "@/pages/app/Settings";
 
 // 동적 import를 통한 코드 스플리팅 (React.lazy + Suspense 필요)
-const Board = React.lazy(() => import("@/pages/Contents/Board"));
+const Board = React.lazy(() => import("@/pages/app/Board"));
 // Logs 하위 메뉴
 
 /**
@@ -19,18 +19,17 @@ export const RouteData = {
   Contents: {
     name: "Contents",
     icon: "🧮",
-    index: true,
     disable: false,
     path: "/",
     element: <Contents />,
     description: "포트폴리오 요약",
     children: {
       Dashboard: { name: "DASHBOARD", icon: "🧮", index: true, disable: false, path: "/", element: <Dashboard />, description: "포트폴리오 요약" },
-      Settings: { name: "SETTINGS", icon: "⚙️", index: true, disable: false, path: "/settings", element: <Settings />, description: "세팅페이지" },
+      Settings: { name: "SETTINGS", icon: "⚙️", disable: false, path: "/settings", element: <Settings />, description: "세팅페이지" },
       Board: {
         name: "BOARD",
         icon: "🧾",
-        disable: true,
+        disable: false,
         path: "/board",
         element: <Board />,
         children: {
