@@ -5,6 +5,7 @@ import { TxCoolTableTheme } from "./TxTheme";
 export { TxButton } from "./TxButton";
 export { TxCoolTable } from "./TxCoolTable";
 export { TxCoolTableScroller } from "./TxCoolTableScroller";
+export { TxLoading } from "./TxLoading";
 export { TxPagenation } from "./TxPagenation";
 
 export const TxComponentCaption = ({ title, className }: { title: string; className?: string }) => {
