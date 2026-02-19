@@ -9,7 +9,7 @@ const Webpack = (env, argv, custom) => {
   const { appName, version = "v000000", minify, mode } = custom;
   console.log(appName, "build version : ", version, JSON.stringify(argv), JSON.stringify(env), JSON.stringify(custom));
   return {
-    entry: { main: "./src/index.tsx" },
+    entry: { main: "./src/app/index.tsx" },
     resolve: {
       extensions: [".ts", ".tsx", ".js", ".jsx", ".json", ".css", ".scss"],
       alias: { "@": path.resolve(process.cwd(), "src") },
