@@ -1,12 +1,13 @@
 import { RouteData } from "@/app/RouteData";
-import { useCurrentRoute } from "@/core/routeToolkit";
+import { useCurrentRoute } from "@/core/routeToolkit/utils";
 import { PageLayout } from "@/shared/layout/PageLayout";
 
 const Dashboard = () => {
   const route = useCurrentRoute(RouteData);
+  console.log(route);
   return (
     <PageLayout>
-      <h1 className="text-2xl font-bold">{`${route.data.icon} ${route.data.name}`}</h1>
+      <h1 className="text-2xl font-bold">{`${route.meta.icon} ${route.meta.label}`}</h1>
       <p className="mt-2 text-gray-600">이 페이지는 📊 대시보드용 템플릿입니다.</p>
       <ul>
         <li>현재 가동 중 설비스</li>

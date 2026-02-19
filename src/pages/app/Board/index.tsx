@@ -1,5 +1,5 @@
 import { RouteData } from "@/app/RouteData";
-import { useCurrentRoute } from "@/core/routeToolkit";
+import { useCurrentRoute } from "@/core/routeToolkit/utils";
 import { PageLayout } from "@/shared/layout/PageLayout";
 import { TxCoolTable, TxCoolTableScroller, TxLoading, TxPagenation } from "@/shared/tx-ui";
 import axios from "axios";
@@ -28,7 +28,7 @@ const Board = () => {
 
   return (
     <PageLayout className="flex flex-col p-4">
-      <h1 className="font-bold">{`${route.data.icon} ${route.data.name}`}</h1>
+      <h1 className="font-bold">{`${route.meta.icon} ${route.meta.label}`}</h1>
       <TxCoolTableScroller className="flex flex-1" footer={<TxPagenation startPageIdx={pageIdx} itemCount={itemCount} onChangePage={_pageIdx} itemVisibleCount={ITEMSIZE} />}>
         {isLoading ? <TxLoading /> : <TxCoolTable className="w-full text-sm text-center" data={vdata} options={{ headers: Headers }} />}
       </TxCoolTableScroller>

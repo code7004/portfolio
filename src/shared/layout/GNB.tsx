@@ -1,13 +1,13 @@
-import { availableRouteDatas, RouteDataAtts } from "@/core/routeToolkit";
+import { AppRouteObject, filterAbleRouteMeta, RouteDataMap } from "@/core/routeToolkit";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
-export default function GNB({ data }: { data: RouteDataAtts }) {
-  const [menus, _menus] = useState([]);
+export default function GNB({ data }: { data: RouteDataMap }) {
+  const [menus, _menus] = useState<AppRouteObject[]>([]);
   const [isDark, setIsDark] = useState(() => document.documentElement.classList.contains("dark"));
 
   useEffect(() => {
-    _menus(availableRouteDatas(data));
+    _menus(filterAbleRouteMeta(data));
   }, [data]);
 
   const toggleDark = () => {
@@ -31,7 +31,7 @@ export default function GNB({ data }: { data: RouteDataAtts }) {
         <span className="text-lg font-bold tracking-tight">🎯 Portfolio</span>
         {menus.map((item, idx) => (
           <NavLink key={idx} to={item.path} className={({ isActive }) => `px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800 ${isActive ? "font-semibold" : ""}`}>
-            {item.icon + " " + item.name}
+            {item.meta.icon + " " + item.meta.label}
           </NavLink>
         ))}
       </nav>

@@ -11,6 +11,7 @@ export interface RouteMeta {
   icon?: ReactNode;
   description?: string;
   hidden?: boolean; // 메뉴 숨김 여부
+  disable?: boolean; // 라우트 등록을 막는다.
   permissions?: number[]; // 접근 권한
   layout?: "app" | "public"; // 레이아웃 분기
   order?: number; // 메뉴 정렬

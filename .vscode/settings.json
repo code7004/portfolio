@@ -1,5 +1,5 @@
 {
-  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -7,17 +7,12 @@
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[css]": {
+  "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": "always",
-    "source.fixAll": "always"
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.formatOnSave": true,
-  "emmet.syntaxProfiles": {
-    "javascript": "jsx",
-    "typescript": "tsx"
-  },
+  "files.insertFinalNewline": true,
   "files.eol": "\n"
 }
