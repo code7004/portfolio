@@ -1,2 +1,11 @@
 #!/bin/sh
+set -e
+
+echo "🔹 commitlint"
 npx --no-install commitlint --edit "$1"
+
+echo "🔹 type check"
+npx tsc --noEmit
+
+echo "🔹 lint-staged"
+npx lint-staged
