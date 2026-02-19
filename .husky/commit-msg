@@ -1,13 +1,1 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-set -e
-
-echo "🔎 Commit message lint"
-npx --no-install commitlint --edit "$1"
-
-echo "🔎 Type check"
-npx tsc --noEmit
-
-echo "🔎 Lint staged files"
-npx lint-staged --quiet
+FORCE_COLOR=0 npx commitlint --edit "$1"

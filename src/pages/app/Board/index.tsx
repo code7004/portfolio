@@ -16,6 +16,8 @@ const Board = () => {
   const [itemCount, _itemCount] = useState(0);
   const [isLoading, _isLoading] = useState(false);
 
+  console.log(bbb);
+
   useEffect(() => {
     (async () => {
       _isLoading(true);
