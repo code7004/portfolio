@@ -1,13 +1,13 @@
-import { AppRouteObject, filterAbleRouteMeta, RouteDataMap } from "@/core/routeToolkit";
+import { RouteNode, getNavigableRoutes, RouteTree } from "@/core/route-meta";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
-export default function GNB({ data }: { data: RouteDataMap }) {
-  const [menus, _menus] = useState<AppRouteObject[]>([]);
+export default function GNB({ data }: { data: RouteTree }) {
+  const [menus, _menus] = useState<RouteNode[]>([]);
   const [isDark, setIsDark] = useState(() => document.documentElement.classList.contains("dark"));
 
   useEffect(() => {
-    _menus(filterAbleRouteMeta(data));
+    _menus(getNavigableRoutes(data));
   }, [data]);
 
   const toggleDark = () => {

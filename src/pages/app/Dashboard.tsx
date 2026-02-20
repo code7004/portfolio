@@ -1,9 +1,9 @@
 import { RouteData } from "@/app/RouteData";
-import { useCurrentRoute } from "@/core/routeToolkit/utils";
+import { useCurrentRouteNode } from "@/core/route-meta";
 import { PageLayout } from "@/shared/layout/PageLayout";
 
 const Dashboard = () => {
-  const route = useCurrentRoute(RouteData);
+  const route = useCurrentRouteNode(RouteData);
   console.log(route);
   return (
     <PageLayout>

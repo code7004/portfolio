@@ -12,6 +12,7 @@
     "format": "prettier --write .",
     "clean": "rm -rf node_modules && yarn cache clean && yarn",
     "start": "yarn webpack-dev-server --port=3000 --progress --config config/webpack.dev.js --name=app --env mode=development",
+    "debug": "yarn start --env debug nostrict ",
     "build": "yarn webpack --progress --config config/webpack.prod.js --name=app --env version=v0.0.1 dist=build",
     "prepare": "husky"
   },
