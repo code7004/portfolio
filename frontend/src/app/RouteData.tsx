@@ -7,8 +7,8 @@ import Dashboard from "@/pages/app/Dashboard";
 import Settings from "@/pages/app/Settings";
 import NotFound from "@/pages/public/NotFound";
 
-const Board = React.lazy(() => import("@/pages/app/Board"));
-const Child = React.lazy(() => import("@/pages/app/Board/Child"));
+const Board = React.lazy(() => import("@/pages/app/board"));
+const Child = React.lazy(() => import("@/pages/app/board/BoardListPage"));
 
 export const RouteData = {
   Contents: {
